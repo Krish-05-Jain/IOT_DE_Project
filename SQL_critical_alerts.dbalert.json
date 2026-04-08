@@ -1,0 +1,25 @@
+{
+  "evaluation": {
+    "source": {
+      "name": "critical_count",
+      "display": "critical_count",
+      "aggregation": "AGGREGATION_UNSPECIFIED"
+    },
+    "comparison_operator": "GREATER_THAN",
+    "threshold": {
+      "value": {
+        "double_value": 5.0
+      }
+    },
+    "notification": {}
+  },
+  "schedule": {
+    "quartz_cron_schedule": "12 0 * * * ?",
+    "timezone_id": "Asia/Calcutta"
+  },
+  "query_lines": [
+    "SELECT COUNT(*) AS critical_count",
+    "FROM iot_krish.gold.critical_alerts",
+    "WHERE reading_ts >= current_timestamp() - INTERVAL 1 HOUR;"
+  ]
+}

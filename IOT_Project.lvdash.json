@@ -1,0 +1,248 @@
+{
+  "datasets": [
+    {
+      "name": "5d4417f9",
+      "displayName": "Hourly Temperature Trends from Device Health Data",
+      "queryLines": [
+        "SELECT\n",
+        "    reading_hour,\n",
+        "    AVG(avg_temperature) AS avg_temp\n",
+        "FROM iot_krish.gold.hourly_device_health\n",
+        "GROUP BY reading_hour\n",
+        "ORDER BY reading_hour;"
+      ]
+    },
+    {
+      "name": "eef65cb2",
+      "displayName": "iot device critical conditions monitoring dataset",
+      "queryLines": [
+        "SELECT\n",
+        "    device_id,\n",
+        "    reading_ts,\n",
+        "    temperature_c,\n",
+        "    vibration_hz,\n",
+        "    zone_name,\n",
+        "    floor,\n",
+        "    supervisor\n",
+        "FROM iot_krish.gold.critical_alerts;"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "6097d737",
+      "displayName": "average temperature per hour",
+      "layout": [
+        {
+          "widget": {
+            "name": "dcf8890c",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "eef65cb2",
+                  "fields": [
+                    {
+                      "name": "floor",
+                      "expression": "`floor`"
+                    },
+                    {
+                      "name": "temperature_c",
+                      "expression": "`temperature_c`"
+                    },
+                    {
+                      "name": "vibration_hz",
+                      "expression": "`vibration_hz`"
+                    },
+                    {
+                      "name": "device_id",
+                      "expression": "`device_id`"
+                    },
+                    {
+                      "name": "supervisor",
+                      "expression": "`supervisor`"
+                    },
+                    {
+                      "name": "reading_ts",
+                      "expression": "`reading_ts`"
+                    },
+                    {
+                      "name": "zone_name",
+                      "expression": "`zone_name`"
+                    },
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "floor"
+                  },
+                  {
+                    "fieldName": "temperature_c"
+                  },
+                  {
+                    "fieldName": "vibration_hz"
+                  },
+                  {
+                    "fieldName": "device_id"
+                  },
+                  {
+                    "fieldName": "supervisor"
+                  },
+                  {
+                    "fieldName": "reading_ts"
+                  },
+                  {
+                    "fieldName": "zone_name"
+                  },
+                  {
+                    "fieldName": "count(*)"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "9ef558c4",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "5d4417f9",
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {}
+            }
+          },
+          "position": {
+            "x": 5,
+            "y": 9,
+            "width": 6,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "7f1d62c9",
+      "displayName": "ecent critical alerts",
+      "layout": [
+        {
+          "widget": {
+            "name": "39e5f5fb",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "5d4417f9",
+                  "fields": [
+                    {
+                      "name": "hourly(reading_hour)",
+                      "expression": "DATE_TRUNC(\"HOUR\", `reading_hour`)"
+                    },
+                    {
+                      "name": "avg(avg_temp)",
+                      "expression": "AVG(`avg_temp`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "hourly(reading_hour)",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fieldName": "avg(avg_temp)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 0,
+            "width": 10,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "4674494d",
+      "displayName": "Global Filters",
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "canvasBackgroundColor": {
+        "light": "#FAFAFB",
+        "dark": "#1F272D"
+      },
+      "widgetBackgroundColor": {
+        "light": "#FFFFFF",
+        "dark": "#11171C"
+      },
+      "fontColor": {
+        "light": "#11171C",
+        "dark": "#E8ECF0"
+      },
+      "selectionColor": {
+        "light": "#2272B4",
+        "dark": "#8ACAFF"
+      },
+      "visualizationColors": [
+        "#077A9D",
+        "#FFAB00",
+        "#00A972",
+        "#FF3621",
+        "#8BCAE7",
+        "#AB4057",
+        "#99DDB4",
+        "#FCA4A1",
+        "#919191",
+        "#BF7080"
+      ],
+      "widgetHeaderAlignment": "LEFT"
+    },
+    "applyModeEnabled": false
+  }
+}
