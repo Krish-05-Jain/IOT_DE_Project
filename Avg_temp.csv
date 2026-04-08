@@ -1,0 +1,33 @@
+floor,temperature_c,vibration_hz,device_id,supervisor,reading_ts,zone_name,count(*)
+3,104.49,3.769,DEV04,Mohan Rao,2024-03-30 04:00:00,Warehouse,1
+3,106.82,5.431,DEV05,Kavitha Nair,2024-03-21 11:57:00,Maintenance Bay,1
+3,96.72,4.458,DEV17,Kavitha Nair,2024-03-18 20:43:00,Maintenance Bay,1
+3,96.81,5.052,DEV04,Mohan Rao,2024-03-13 16:29:00,Warehouse,1
+3,100.86,4.695,DEV05,Kavitha Nair,2024-03-13 07:34:00,Maintenance Bay,1
+3,96.82,3.783,DEV10,Mohan Rao,2024-03-11 20:34:00,Warehouse,1
+2,93.9,4.612,DEV14,Anil Joshi,2024-03-28 22:14:00,Quality Control,1
+2,108.57,5.189,DEV20,Anil Joshi,2024-03-28 08:45:00,Quality Control,1
+2,98.76,4.912,DEV08,Anil Joshi,2024-03-25 15:43:00,Quality Control,1
+2,94.43,5.953,DEV02,Anil Joshi,2024-03-21 13:45:00,Quality Control,1
+2,92.54,4.578,DEV08,Anil Joshi,2024-03-20 19:34:00,Quality Control,1
+2,108.2,4.211,DEV20,Anil Joshi,2024-03-20 05:41:00,Quality Control,1
+2,95.73,3.73,DEV15,Preethi Das,2024-03-19 18:17:00,Packaging,1
+2,101.37,5.973,DEV08,Anil Joshi,2024-03-17 01:19:00,Quality Control,1
+2,104.29,5.073,DEV14,Anil Joshi,2024-03-16 20:48:00,Quality Control,1
+2,105.39,3.694,DEV09,Preethi Das,2024-03-15 05:07:00,Packaging,1
+2,94.05,4.59,DEV20,Anil Joshi,2024-03-12 21:31:00,Quality Control,1
+2,92.56,3.995,DEV15,Preethi Das,2024-03-10 14:09:00,Packaging,1
+2,100.52,3.821,DEV09,Preethi Das,2024-03-06 21:02:00,Packaging,1
+2,93.17,4.416,DEV02,Anil Joshi,2024-03-05 14:08:00,Quality Control,1
+2,95.95,5.008,DEV09,Preethi Das,2024-03-02 04:05:00,Packaging,1
+2,92.34,5.651,DEV14,Anil Joshi,2024-03-01 22:07:00,Quality Control,1
+1,102.06,4.535,DEV07,Seema Pillai,2024-03-26 06:15:00,Assembly Line B,1
+1,108.75,4.155,DEV19,Seema Pillai,2024-03-21 07:01:00,Assembly Line B,1
+1,105,3.892,DEV19,Seema Pillai,2024-03-17 22:21:00,Assembly Line B,1
+1,106.1,5.679,DEV12,Ramesh Kumar,2024-03-15 19:13:00,Assembly Line A,1
+1,105.23,3.688,DEV19,Seema Pillai,2024-03-13 17:10:00,Assembly Line B,1
+1,98.56,5.427,DEV06,Ramesh Kumar,2024-03-11 00:53:00,Assembly Line A,1
+1,102.93,4.444,DEV01,Seema Pillai,2024-03-07 20:29:00,Assembly Line B,1
+1,99.15,5.769,DEV01,Seema Pillai,2024-03-06 14:28:00,Assembly Line B,1
+1,97.39,5.927,DEV07,Seema Pillai,2024-03-02 04:31:00,Assembly Line B,1
+1,97.59,5.181,DEV13,Seema Pillai,2024-03-01 09:57:00,Assembly Line B,1
